@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discord Webhook Sender</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Discord Webhook Sender</h1>
+  <form id="webhookForm">
+    <label for="webhookUrl">Webhook URL:</label>
+    <input type="text" id="webhookUrl" placeholder="https://discord.com/api/webhooks/" required><br><br>
+    <label for="username">Username:</label><br>
+    <input type="text" id="username" placeholder="Captain Hook" style="width: 100%;"><br><br>
+    <label for="avatar-url">Avatar URL:</label><br>
+    <input type="url" id="avatar-url" placeholder="https://cdn.discordapp.com/avatars/" style="width: 100%;"><br><br>
+    <label for="message">Message:</label><br>
+    <textarea id="message" rows="4" cols="50" placeholder="Hello World" required class="outlined"></textarea><br><br>
+    <label for="interval">Interval(ms):</label>
+    <input type="number" id="interval" min="0" placeholder="1" value="1000"><br><br>
+    <label for="times">Count:</label>
+    <input type="number" id="times" placeholder="1" min="1" value="1"><br><br>
+       
+    <label for="option">Option:</label>
+    <select id="option" name="option">
+      <option value="None" selected>None</option>
+      <option value="Add random string at the top">Add random string at the top</option>
+      <option value="Add random string at the end">Add random string at the end</option>
+    </select><br>
+    
+    <label for="file">Image:</label>
+    <input type="file" id="file">
+    <button type="button" onclick="clearFile()">Clear</button><br><br>
+    
+    <input type="submit" value="send" onclick="sendWebhook(event)" class="submit"><br><br>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>
