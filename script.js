@@ -19,7 +19,17 @@ function sendWebhook(event) {
     alert("Missing parameters.");
     return;
   }
-  
+
+// Log container
+const logsContainer = document.getElementById('logs');
+
+// Function to append log messages
+function logMessage(message) {
+    const timestamp = new Date().toLocaleTimeString();
+    logsContainer.textContent += `[${timestamp}] ${message}\n`;
+    logsContainer.scrollTop = logsContainer.scrollHeight; // Scroll to the bottom
+}
+
   for (let i = 0; i < times; i++) {
     const modifiedMessage = applyOption(message, option);
     const payload = {
