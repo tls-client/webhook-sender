@@ -48,9 +48,9 @@ function logMessage(message) {
         method: "POST",
         body: formData
       }).then(response => {
-        console.log("Message sent successfully!");
+        logMessage("Message sent successfully!");
       }).catch(error => {
-        console.error("Error sending message:", error);
+        logMessage("Error sending message:", error);
       });
     }, interval);
   }
